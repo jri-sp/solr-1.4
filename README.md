@@ -1,2 +1,2 @@
-![alt text](http://lucene.apache.org/solr/assets/images/logo.svg)
+![alt text](https://fr.wikipedia.org/wiki/Fichier:Solr.png)
 
