@@ -2,7 +2,7 @@
 
 Solr image build with tomcat:6.0 and java:6-jre Docker images 
 
-# build and run the Docker image
+## build and run the Docker image
 ```
 docker build -t solr .
 docker run -it --rm --name my-solr solr
