@@ -68,7 +68,9 @@
     -->
     <Connector port="8080" protocol="HTTP/1.1" 
                connectionTimeout="20000" 
-               redirectPort="8443" />
+               redirectPort="8443" 
+               URIEncoding="UTF-8"
+               address="0.0.0.0"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -127,7 +129,7 @@
 
       <Host name='localhost' appBase='webapps'>
           <context path='solr' docBase='apache-solr-1.4.1'>
-            <Environment name='/usr/local/tomcat/conf/solr' type='java.lang.string' value='/usr/local/tomcat/conf/solr' override='true'/>
+            <Environment name='/usr/local/tomcat/conf/solrweb.xml' type='java.lang.string' value='/usr/local/tomcat/solr/solr' override='true'/>
           </context>
 
         <!-- SingleSignOn valve, share authentication between web applications

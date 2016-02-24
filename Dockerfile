@@ -1,9 +1,10 @@
-FROM tomcat:6-jre7
+FROM java:6-jre
+FROM tomcat:6
 MAINTAINER Sébastien Stinkeste
 
-RUN apt-get update && apt-get install -y wget openjdk-7-jdk
+RUN apt-get update && apt-get install -y wget 
 RUN mkdir -p /usr/java && \
-    ln -s /usr/lib/jvm/java-7-openjdk-amd64 /usr/java/default
+    ln -s /usr/lib/jvm/java-6-openjdk-amd64 /usr/java/default
 
 ENV SOLR_USER solr
 ENV SOLR_UID 8983
@@ -21,7 +22,7 @@ RUN tar -xvf ${SOLR_VERSION}.tgz && \
     cp -R ${SOLR_VERSION}/example/  ${CATALINA_HOME}/solr && \
     chown -R ${SOLR_USER}:${SOLR_USER} /usr/local
 
-COPY server.xml ${CATALINA_HOME}/conf
+COPY server.xml ${CATALINA_HOME}/conf/serverweb.xml
 EXPOSE 8080
 WORKDIR ${CATALINA_HOME}/solr
 USER ${SOLR_USER}
