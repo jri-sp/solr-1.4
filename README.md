@@ -2,6 +2,11 @@
 
 Solr image build with tomcat:6.0 and java:6-jre Docker images 
 
+## Pull Docker image
+```
+docker pull sebstinkeste/solr-1.4:jre6
+```
+
 ## build and run the Docker image
 ```
 docker build -t solr .
