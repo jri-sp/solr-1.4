@@ -2,14 +2,14 @@ FROM java:6-jre
 FROM tomcat:6
 MAINTAINER Sébastien Stinkeste
 
-RUN apt-get update && apt-get install -y wget 
+RUN apt-get update && apt-get install -y wget nano vim
 RUN mkdir -p /usr/java && \
     ln -s /usr/lib/jvm/java-6-openjdk-amd64 /usr/java/default
 
 ENV SOLR_USER solr
 ENV SOLR_UID 8983
-ENV CATALINA_HOME /usr/local/tomcat
 ENV SOLR_VERSION  apache-solr-1.4.1
+ENV CATALINA_HOME /usr/local/tomcat
 
 RUN groupadd -r ${SOLR_USER} && \
     useradd -r -u ${SOLR_UID} -g ${SOLR_USER} ${SOLR_USER}
